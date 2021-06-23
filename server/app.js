@@ -19,14 +19,14 @@ app.get('/', (req, res) => {
     });   
 })
 
-app.get('/:summoner', (req, res) => {
+app.get('/overview/:summoner', (req, res) => {
   let param = req.params.summoner;
   let summoner_data = {}
   axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${param}?api_key=${process.env.RIOT_API_KEY}`)
     .then(res => {
       summoner_data = res.data;
       let encryptedSummonerId = summoner_data.id;
-      axios.get(`https://na1.api.riotgames.com//lol/league/v4/entries/by-summoner/${encryptedSummonerId}?api_key=${process.env.RIOT_API_KEY}`)
+      axios.get(`https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}?api_key=${process.env.RIOT_API_KEY}`)
         .then(res => {
           console.log(res.data)
         })
@@ -38,11 +38,9 @@ app.get('/:summoner', (req, res) => {
       console.log(err);
     })
     .then(() => {
-      res.send('summoner path')
+      let profileIconId	= summoner_data.profileIconId
+      res.send(`http://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/${profileIconId}.png`)
     });  
-
-  
-
 })
 
 app.listen(
