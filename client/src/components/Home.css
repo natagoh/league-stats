@@ -12,9 +12,9 @@
 
 .home-title {
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   color: #9AA5B1;
-  font-size: 6rem;
+  font-size: 8rem;
 }
 
 .home-input {
@@ -22,10 +22,10 @@
   color: #1F2933;
 
   border: none;
-  border-radius: 25px;
-  padding: 5px 0;
+  border-radius: 50px;
+  padding: 0.75rem 0;
   margin: 0;
-  width: auto;
+  width: 100%;
 
   font-size: 2rem;
   text-align: center;

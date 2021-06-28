@@ -11,8 +11,8 @@ export default function Home() {
 				</p>
 				<input 
 					className="home-input"
-					type="text"
-					value="summoner name"/>
+					type="submit"
+					value="summoner name" />
 			</div>
 		</div>
 	)
