@@ -6,6 +6,9 @@ require('dotenv').config()
 const app = express()
 const PORT = process.env.PORT || 3001;
 
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
 app.get('/', (req, res) => {
   axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/StormRazr?api_key=${process.env.RIOT_API_KEY}`)
     .then(res => {
@@ -42,6 +45,11 @@ app.get('/overview/:summoner', (req, res) => {
       res.send(`http://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/${profileIconId}.png`)
     });  
 })
+
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 app.listen(
   PORT, 

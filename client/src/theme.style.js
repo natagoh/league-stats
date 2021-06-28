@@ -1,0 +1,8 @@
+export default {
+    FONT_SIZE_SMALL: 12,
+    FONT_SIZE_MEDIUM: 16,
+    FONT_SIZE_LARGE: 20,
+  
+    BACKGROUND_COLOR: '#1F2933',
+    TEXT_COLOR: '#9AA5B1',
+  };
