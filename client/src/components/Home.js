@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Home.css'
 
 export default function Home() {
+	const [summoner, setSummoner] = useState("summoner name");
+
+	const handleChange = (e) => setSummoner(e.target.value);
+
+	const handleClick = (e) => setSummoner("");
+
+	const handleKeyDown = (e) => {
+		if (e.key === 'Enter') {
+			console.log(summoner)
+		}
+	}
+
 	return (
 		<div className="home-container">
 			<div>
@@ -11,8 +23,11 @@ export default function Home() {
 				</p>
 				<input 
 					className="home-input"
-					type="submit"
-					value="summoner name" />
+					type="text"
+					onChange={handleChange}
+					onClick={handleClick}
+					onKeyDown={handleKeyDown}
+					value={summoner} />
 			</div>
 		</div>
 	)
