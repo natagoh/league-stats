@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
 
 import './Home.css'
 
 export default function Home() {
 	const [summoner, setSummoner] = useState("");
+	const history = useHistory();
 
 	const handleChange = (e) => {
 		setSummoner(e.target.value)
@@ -14,6 +16,7 @@ export default function Home() {
 	const handleKeyDown = (e) => {
 		if (e.key === 'Enter') {
 			console.log(summoner)
+			history.push(`/summoner/${summoner}`)
 		}
 	}
 
