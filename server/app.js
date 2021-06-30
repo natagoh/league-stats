@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const axios = require('axios');
 
 require('dotenv').config()
@@ -6,8 +7,8 @@ require('dotenv').config()
 const app = express()
 const PORT = process.env.PORT || 3001;
 
-// Have Node serve the files for our built React app
-//app.use(express.static(path.resolve(__dirname, '../client/build')));
+// have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get('/', (req, res) => {
   axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/StormRazr?api_key=${process.env.RIOT_API_KEY}`)
@@ -22,7 +23,7 @@ app.get('/', (req, res) => {
     });   
 })
 
-app.get('/overview/:summoner', (req, res) => {
+app.get('/api/profile/:summoner', (req, res) => {
   let param = req.params.summoner;
   let summoner_data = {}
   axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${param}?api_key=${process.env.RIOT_API_KEY}`)
