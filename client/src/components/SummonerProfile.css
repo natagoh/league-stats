@@ -1,0 +1,43 @@
+.summoner-profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.summoner-profile-photo {
+  height: 96px;
+}
+
+.summoner-profile-text {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.summoner-profile-text > p {
+  margin: 0;
+  color: #7B8794
+}
+
+.summoner-profile-text > p:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.summoner-profile-update-btn {
+  display: inline-block;
+  text-align: center;
+  color: #1F2933;
+  background: #7B8794;
+  padding: 3px 6px;
+  margin-top: 8px;
+  border-radius: 4px;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.summoner-profile-update-btn:hover {
+  background: #3E4C59;
+}

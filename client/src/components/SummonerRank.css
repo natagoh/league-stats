@@ -1,0 +1,24 @@
+.summoner-rank-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 1rem;
+}
+
+.summoner-rank-photo {
+  height: 96px;
+}
+
+.summoner-rank-text {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.summoner-rank-text > p {
+  margin: 0;
+  color: #7B8794
+}
+
+.summoner-rank-text > p:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

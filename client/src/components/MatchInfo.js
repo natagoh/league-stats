@@ -13,7 +13,7 @@ export default function MatchInfo() {
       'match-info-loss': !win,
     })}>
       <div className='match-info-result'>
-        <p><span className='match-info-result-queue'>Ranked Solo</span></p>
+        <p>Ranked Solo</p>
         <p>an hour ago</p>
         <p>
           <span className={cx({
@@ -46,11 +46,7 @@ export default function MatchInfo() {
         </div>
       </div>
       <div className='match-info-kda'>
-          <p>
-            <span className='match-info-kda-data'>
-              6/1/12
-            </span>
-          </p>
+          <p>6/1/12</p>
           <p>18.00:1 KDA</p>
           <p>67% KP</p>
           <p>34 CS (1.3)</p>

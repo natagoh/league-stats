@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import ImgDetail from './ImgDetail';
+import SummonerProfile from './SummonerProfile';
+import SummonerRank from './SummonerRank';
 import MatchInfo from './MatchInfo';
 import './Stats.css'
 
@@ -15,8 +16,8 @@ export default function Stats() {
       </div>
       <div className="stats-content"> 
         <div className="stats-summoner-overview">
-          <ImgDetail />
-          <ImgDetail />
+          <SummonerProfile />
+          <SummonerRank />
         </div>
         <div className="stats-match-history">
           <MatchInfo />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './ImgDetail.css'
+import './SummonerRank.css'
 
 import Iron from './../assets/ranked-emblems/Emblem_Iron.png';
 import Bronze from './../assets/ranked-emblems/Emblem_Bronze.png';
@@ -13,17 +13,17 @@ import Grandmaster from './../assets/ranked-emblems/Emblem_Grandmaster.png';
 import Challenger from './../assets/ranked-emblems/Emblem_Challenger.png';
 
 
-export default function ImgDetail() {
-  let placeholder="http://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/4678.png";
-
+export default function SummonerRank() {
   return (
-    <div className="img-detail-container">
+    <div className="summoner-rank-container">
       <img 
-        className="img-detail-photo"
+        className="summoner-rank-photo"
         src={Gold}/>
-      <div className="img-detail-text">
-        <p>username</p>
-        <p>Ladder Rank: noob</p>
+      <div className="summoner-rank-text">
+        <p>Ranked Solo</p>
+        <p>Silver II &middot; 27 LP</p>
+        <p>20W 20L</p>
+        <p>50.00% WR 40 games</p>
       </div>
     </div>
   )

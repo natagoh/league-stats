@@ -40,7 +40,7 @@
   margin: 0;
 }
 
-.match-info-result-queue {
+.match-info-result > p:first-child {
   font-weight: bold;
   font-size: 1rem;
 }
@@ -100,13 +100,13 @@
   border-radius: 2px;
 }
 
-.match-info-kda > p{
+.match-info-kda > p {
   text-align: center;
   font-size: 0.70rem;
   margin: 0;
 }
 
-.match-info-kda-data {
+.match-info-kda > p:first-child {
   font-weight: bold;
   font-size: 1.25rem;
 }
@@ -120,6 +120,10 @@
 .match-info-items-set img {
   width: 24px;
   border-radius: 2px;
+}
+
+.match-info-items-vision {
+  margin-top: 4px;
 }
 
 .match-info-items-vision p {
