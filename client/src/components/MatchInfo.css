@@ -11,15 +11,26 @@
   /* TODO: add bottom margin to all elements except for the last */
   margin-bottom: 12px;
   border-radius: 0.5rem;
+
+  cursor: default;
 }
 
 .match-info-win {
-  background-color: #6D839B5A;
+  background: #6D839B5A;
+  border: 2px solid #1F2933;
+}
+
+.match-info-win:hover {
   border: 2px solid #6D839B;
 }
 
+
 .match-info-loss {
-  background-color: #AC95995A;
+  background: #AC95995A;
+  border: 2px solid #1F2933;
+}
+
+.match-info-loss:hover {
   border: 2px solid #AC9599;
 }
 
@@ -141,5 +152,7 @@
   font-size: 0.70rem;
   text-align: center;
   margin: 0;
-  margin-left: 2px;
+  margin-left: 4px;
+
+  cursor: pointer;
 }
