@@ -3,7 +3,7 @@ import cx from 'classnames'
 import './MatchInfo.css'
 
 export default function MatchInfo() {
-  let win = false;
+  let win = true;
   let placeholder = "http://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/4678.png";
   
   return (

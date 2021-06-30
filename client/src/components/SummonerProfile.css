@@ -8,6 +8,7 @@
 
 .summoner-profile-photo {
   height: 96px;
+  border-radius: 6px;
 }
 
 .summoner-profile-text {

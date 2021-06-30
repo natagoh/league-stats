@@ -1,6 +1,6 @@
 .match-info-container {
   width: 700px;
-  color: #b8b8b8;
+  color: #ffffff93;
 
   display: flex;
   flex-direction: row;
@@ -16,22 +16,22 @@
 }
 
 .match-info-win {
-  background: #6D839B5A;
+  background: #2e5a8a5a;
   border: 2px solid #1F2933;
 }
 
 .match-info-win:hover {
-  border: 2px solid #6D839B;
+  border: 2px solid #2e5a8a;
 }
 
 
 .match-info-loss {
-  background: #AC95995A;
+  background: #965c665a;
   border: 2px solid #1F2933;
 }
 
 .match-info-loss:hover {
-  border: 2px solid #AC9599;
+  border: 2px solid #965c66;
 }
 
 .match-info-result > p{
