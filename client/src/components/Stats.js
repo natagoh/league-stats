@@ -17,7 +17,6 @@ export default function Stats() {
         <div className="stats-summoner-overview">
           <ImgDetail />
           <ImgDetail />
-          <ImgDetail />
         </div>
         <div className="stats-match-history">
           <MatchInfo />
