@@ -29,38 +29,6 @@
   align-self: flex-start;
 }
 
-.stats-navbar-input {
-  /* background-color: #9AA5B1; */
-  background-color: #3E4C59;
-  color: #9AA5B1;
-
-  border: 1.5px solid #9AA5B1;
-  border-radius: 20px;
-  padding: 4px 0;
-  margin-left: 2rem;
-
-  font-size: 1rem;
-  text-align: center;
-}
-
-.stats-navbar-input:focus {
-  outline: none;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  /* color: #616E7C; */
-  color: #7B8794;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #7B8794;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: #7B8794;  
-}
-
 .stats-content {
   flex: auto;
   display: flex;

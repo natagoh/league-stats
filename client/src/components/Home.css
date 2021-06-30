@@ -16,34 +16,3 @@
   color: #9AA5B1;
   font-size: 8rem;
 }
-
-.home-input {
-  background-color: #9AA5B1;
-  color: #1F2933;
-
-  border: none;
-  border-radius: 50px;
-  padding: 0.75rem 0;
-  margin: 0;
-  width: 100%;
-
-  font-size: 2rem;
-  text-align: center;
-}
-
-.home-input:focus {
-  outline: none;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #616E7C;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #616E7C;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: #616E7C;
-}

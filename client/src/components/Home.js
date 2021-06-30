@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
+import Search from './Search';
 
 import './Home.css'
 
@@ -24,16 +25,9 @@ export default function Home() {
 		<div className="home-container">
 			<div>
 				<p className="home-title">
-					League Stats
+					StormRazr.gg
 				</p>
-				<input 
-					className="home-input"
-					type="text"
-					onChange={handleChange}
-					onClick={handleClick}
-					onKeyDown={handleKeyDown}
-					placeholder="summoner name"
-					value={summoner} />
+				<Search filled={true}/>
 			</div>
 		</div>
 	)
