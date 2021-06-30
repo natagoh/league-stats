@@ -1,5 +1,5 @@
 .match-info-container {
-  width: 750px;
+  width: 700px;
   color: #9AA5B1;
 
   display: flex;
@@ -8,15 +8,19 @@
   align-items: center;
 
   padding: 8px;
+  /* TODO: add bottom margin to all elements except for the last */
+  margin-bottom: 12px;
   border-radius: 0.5rem;
 }
 
 .match-info-win {
   background-color: #6D839B5A;
+  border: 2px solid #6D839B;
 }
 
 .match-info-loss {
   background-color: #AC95995A;
+  border: 2px solid #AC9599;
 }
 
 .match-info-result > p{
@@ -77,7 +81,7 @@
   grid-auto-flow: column;
   grid-template-rows: auto 1fr;
   grid-gap: 4px;
-  margin-left: 1rem;
+  margin-left: 12px;
 }
 
 .match-info-summoner-spells img {

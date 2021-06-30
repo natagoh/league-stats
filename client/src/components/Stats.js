@@ -21,6 +21,16 @@ export default function Stats() {
         </div>
         <div className="stats-match-history">
           <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
+          <MatchInfo />
         </div>
       </div>
     </div>
