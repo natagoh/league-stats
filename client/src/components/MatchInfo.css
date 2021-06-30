@@ -1,0 +1,141 @@
+.match-info-container {
+  width: 750px;
+  color: #9AA5B1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 8px;
+  border-radius: 0.5rem;
+}
+
+.match-info-win {
+  background-color: #6D839B5A;
+}
+
+.match-info-loss {
+  background-color: #AC95995A;
+}
+
+.match-info-result > p{
+  text-align: center;
+  font-size: 0.80rem;
+  margin: 0;
+}
+
+.match-info-result-queue {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.match-info-result-win {
+  color: #6D839B;
+  font-weight: bold;
+}
+
+.match-info-result-loss {
+  color: #AC9599;
+  font-weight: bold;
+}
+
+.match-info-summoner {
+  display: flex;
+  flex-direction: row;
+}
+
+.match-info-summoner-pfp {
+  width: 48px;
+  border-radius: 24px;
+}
+
+.match-info-summoner-lvl {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: black;
+  
+  text-align: center;
+  margin: 0;
+  margin-left: -15px;
+  padding: 0;
+  align-self: flex-end;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-info-summoner-lvl span {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.match-info-summoner-spells {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto 1fr;
+  grid-gap: 4px;
+  margin-left: 1rem;
+}
+
+.match-info-summoner-spells img {
+  width: 24px;
+  border-radius: 2px;
+}
+
+.match-info-kda > p{
+  text-align: center;
+  font-size: 0.70rem;
+  margin: 0;
+}
+
+.match-info-kda-data {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.match-info-items-set {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4px;
+}
+
+.match-info-items-set img {
+  width: 24px;
+  border-radius: 2px;
+}
+
+.match-info-items-vision p {
+  margin: 0;
+  font-size: 0.70rem;
+  text-align: left;
+}
+
+.match-info-team {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 2px 8px;
+}
+
+.match-info-team img {
+  width: 16px;
+  border-radius: 2px;
+}
+
+.match-info-team div {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.match-info-team div p {
+  font-size: 0.70rem;
+  text-align: center;
+  margin: 0;
+  margin-left: 2px;
+}

@@ -1,0 +1,18 @@
+.img-detail-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-detail-photo {
+  height: 96px;
+}
+
+.img-detail-text {
+  text-align: left;
+  margin-left: 1rem;
+  margin-right: 4rem;
+}
+
+.img-detail-text > p {
+  margin: 0;
+}

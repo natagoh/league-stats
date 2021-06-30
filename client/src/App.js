@@ -6,14 +6,14 @@ import {
 } from "react-router-dom";
 
 import Home from './components/Home';
-import StatsPage from './components/StatsPage';
+import Stats from './components/Stats';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route path="/summoner/:username">
-          <StatsPage />
+          <Stats />
         </Route>
         <Route path="/">
           <Home />
