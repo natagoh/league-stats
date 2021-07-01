@@ -12,7 +12,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/summoner/:username">
+        <Route path="/summoner/:summoner">
           <Stats />
         </Route>
         <Route path="/">

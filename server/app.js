@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 // have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   axios.get(`https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/StormRazr?api_key=${process.env.RIOT_API_KEY}`)
     .then(res => {
       console.log(res.data);
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
       console.log(err);
     })
     .then(() => {
-      res.send('Hello World!')
+      res.json('Hello World!')
     });   
 })
 
@@ -42,21 +42,39 @@ app.get('/api/profile/:summoner', (req, res) => {
       console.log(err);
     })
     .then(() => {
-      res.send(summonerData)
+      res.status(200).json(summonerData)
       //let profileIconId	= summonerData.profileIconId
       //res.send(`http://ddragon.leagueoflegends.com/cdn/11.13.1/img/profileicon/${profileIconId}.png`)
     });  
 })
 
+// get summoner ranked data
 app.get('/api/profile/ranked/:summonerId', (req, res) => {
   let param = req.params.summonerId;
   let summonerRankedData = {};
   let encryptedSummonerId = param;
+
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
+
+  function extractQueueType(str) {
+    const words = str.split('_')
+    let res = ''
+    for (let i = 0; i < words.length - 1; i++) {
+      res += capitalizeFirstLetter(words[i])
+      if (i == 0) {
+        res += ' '
+      }
+    }
+    return res
+  }
+
   axios.get(`https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}?api_key=${process.env.RIOT_API_KEY}`)
     .then(res => {
       res.data.forEach(el => (
-        summonerRankedData[el.queueType] = {
-          tier: el.tier,
+        summonerRankedData[extractQueueType(el.queueType)] = {
+          tier: capitalizeFirstLetter(el.tier),
           rank: el.rank,
           LP: el.leaguePoints,
           wins: el.wins,
@@ -83,5 +101,5 @@ app.get('*', (req, res) => {
 
 app.listen(
   PORT, 
-  () => console.log(`app listening at http://localhost:${PORT} ${process.env.RIOT_API_KEY}`)
+  () => console.log(`app listening at http://localhost:${PORT}`)
 );

@@ -6,9 +6,37 @@
   margin: 0 1rem;
 }
 
-.summoner-profile-photo {
+.summoner-profile-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.summoner-profile-img img {
   height: 96px;
   border-radius: 6px;
+}
+
+.summoner-profile-img div {
+  width: 40px;
+  height: 20px;
+  border-radius: 8px;
+  background-color: black;
+  
+  text-align: center;
+  margin: 0;
+  margin-top: -10px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summoner-profile-img span {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .summoner-profile-text {
