@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import ddragonItem from '../ddragon/item.json'
 import ddragonChampion from '../ddragon/champion.json'
-import ddragonSummoner from '../ddragon/champion.json'
+import ddragonSummoner from '../ddragon/summoner.json'
+import ddragonRunesReforged from '../ddragon/runesReforged.json'
 
 import './MatchInfo.css'
 
@@ -45,11 +46,22 @@ export default function MatchInfo({ match }) {
   const champLevel = matchData.champLevel;
 
   // summoners + runes
-  const summonerSpell1 = matchData.summoner1Id
-  const summonerSpell2 = matchData.summoner2Id
-  // const runeData = matchData.perks
-  // const runePrimary = runeData.styles[0].style
-  // const runeSecondary = runeData.styles[1].style
+  function getSummonerSpellImgSrc(id) {
+    for (let obj in ddragonSummoner.data) {
+      if (ddragonSummoner.data[obj].key == id) {
+        return ddragonSummoner.data[obj].image.full
+      }
+    } 
+  }
+
+  const summonerSpell1 = getSummonerSpellImgSrc(matchData.summoner1Id)
+  const summonerSpell2 = getSummonerSpellImgSrc(matchData.summoner2Id)
+
+  const runeData = matchData.perks
+  const runePrimary = runeData.styles[0].selections[0].perk
+  const runeSecondaryTree = runeData.styles[1].style
+
+
 
   // KDA data
   const assists = matchData.assists;
@@ -104,10 +116,10 @@ export default function MatchInfo({ match }) {
         <div className='match-info-summoner-spells'>
           {/* summoners */}
           <img
-            src={placeholder}
+            src={`http://ddragon.leagueoflegends.com/cdn/11.13.1/img/spell/${summonerSpell1}`}
             alt="summoner-spell-1" />
           <img
-            src={placeholder}
+            src={`http://ddragon.leagueoflegends.com/cdn/11.13.1/img/spell/${summonerSpell2}`}
             alt="summoner-spell-2" />
           {/* runes */}
           <img
@@ -122,7 +134,7 @@ export default function MatchInfo({ match }) {
           <p>{`${kills}/${deaths}/${assists}`}</p>
           <p>{kdaRatio} KDA</p>
           <p>67% KP</p>
-          <p>{`${creepScore} CS (${creepScorePerMin})`}</p>
+          <p>{`${creepScore} (${creepScorePerMin}) CS`}</p>
       </div>
       <div className='match-info-items'>
         <div className='match-info-items-set'>
