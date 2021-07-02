@@ -17,7 +17,6 @@ export default function Search(props) {
 
 	const handleKeyDown = (e) => {
 		if (e.key === 'Enter') {
-			console.log(summoner)
 			history.push(`/summoner/${summoner}`)
 		}
 	}
