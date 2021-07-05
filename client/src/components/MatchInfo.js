@@ -37,9 +37,9 @@ export default function MatchInfo({ match }) {
 
   // champ
   let champId = matchData.championName;
-  for (let obj in ddragonChampion.data) {
-    if (ddragonChampion.data[obj].name === champId) {
-      champId = ddragonChampion.data[obj].id
+  for (let key in ddragonChampion.data) {
+    if (ddragonChampion.data[key].name === champId) {
+      champId = ddragonChampion.data[key].id
       break
     }
   } 
@@ -47,21 +47,40 @@ export default function MatchInfo({ match }) {
 
   // summoners + runes
   function getSummonerSpellImgSrc(id) {
-    for (let obj in ddragonSummoner.data) {
-      if (ddragonSummoner.data[obj].key == id) {
-        return ddragonSummoner.data[obj].image.full
+    for (let key in ddragonSummoner.data) {
+      if (ddragonSummoner.data[key].key == id) {
+        return ddragonSummoner.data[key].image.full
       }
     } 
+  }
+
+  function getRunePrimaryImgSrc(id) {
+    for (let key in ddragonRunesReforged) {
+      const runeTree = ddragonRunesReforged[key];
+      for (let keyStone in runeTree.slots[0].runes) {
+        const runeKeyStone = runeTree.slots[0].runes[keyStone]
+        if (runeKeyStone.id === id) {
+          return runeKeyStone.icon
+        }
+      }
+    }
+  }
+
+  function getRuneSecondaryTreeImgSrc(id) {
+    for (let key in ddragonRunesReforged) {
+      const runeTree = ddragonRunesReforged[key];
+      if (runeTree.id === id) {
+        return runeTree.icon
+      }
+    }
   }
 
   const summonerSpell1 = getSummonerSpellImgSrc(matchData.summoner1Id)
   const summonerSpell2 = getSummonerSpellImgSrc(matchData.summoner2Id)
 
-  const runeData = matchData.perks
-  const runePrimary = runeData.styles[0].selections[0].perk
-  const runeSecondaryTree = runeData.styles[1].style
-
-
+  const runeData = matchData?.perks
+  const runePrimary = getRunePrimaryImgSrc(runeData?.styles[0]?.selections[0]?.perk)
+  const runeSecondaryTree = getRuneSecondaryTreeImgSrc(runeData?.styles[1]?.style)
 
   // KDA data
   const assists = matchData.assists;
@@ -106,10 +125,11 @@ export default function MatchInfo({ match }) {
         </p>
       </div>
       <div className='match-info-summoner'>
-        <img
-          className='match-info-summoner-pfp' 
-          src={`http://ddragon.leagueoflegends.com/cdn/11.13.1/img/champion/${champId}.png`}
-          alt={champId} />
+        <div className='match-info-summoner-img'>
+          <img
+            src={`http://ddragon.leagueoflegends.com/cdn/11.13.1/img/champion/${champId}.png`}
+            alt={champId} />
+        </div>
         <div className='match-info-summoner-lvl'>
           <span>{champLevel}</span>
         </div>
@@ -123,10 +143,10 @@ export default function MatchInfo({ match }) {
             alt="summoner-spell-2" />
           {/* runes */}
           <img
-            src={placeholder}
+            src={`https://ddragon.leagueoflegends.com/cdn/img/${runePrimary}`}
             alt="rune-primary" />
           <img
-            src={placeholder}
+            src={`https://ddragon.leagueoflegends.com/cdn/img/${runeSecondaryTree}`}
             alt="rune-secondary" />
         </div>
       </div>

@@ -7,7 +7,6 @@ export default function SummonerProfile({ data }) {
   const profileIconId = data.profileIconId;
   const summonerLevel = data.summonerLevel;
 
-  console.log(data)
   return (
     <div className="summoner-profile-container">
       <div className="summoner-profile-img">

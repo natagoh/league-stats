@@ -21,7 +21,7 @@ export default function SummonerRank(props) {
         alt={`${tier} ranked emblem`}/>
       <div className="summoner-rank-text">
         <p>{queue}</p>
-        <p>{`${tier} ${rank} ${LP} LP`}</p>
+        <p>{`${tier} ${rank} (${LP} LP)`}</p>
         <p>{`${wins}W ${losses}L`}</p>
         <p>{`${winrate}% WR ${totalGames} games`}</p>
       </div>

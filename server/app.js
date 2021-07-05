@@ -75,6 +75,13 @@ app.get('/api/profile/ranked/:summonerId', (req, res) => {
     return res
   }
 
+  const romanToInt = {
+      'I': 1,
+      'II': 2,
+      'III': 3,
+      'IV': 4,
+  }
+
   axios.get(
     `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}`,
     {headers: { 'X-Riot-Token': process.env.RIOT_API_KEY}}
@@ -83,7 +90,7 @@ app.get('/api/profile/ranked/:summonerId', (req, res) => {
       res.data.forEach(el => (
         summonerRankedData[extractQueueType(el.queueType)] = {
           tier: capitalizeFirstLetter(el.tier),
-          rank: el.rank,
+          rank: romanToInt[el.rank],
           LP: el.leaguePoints,
           wins: el.wins,
           losses: el.losses,
