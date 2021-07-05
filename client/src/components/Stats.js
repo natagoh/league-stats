@@ -43,7 +43,6 @@ export default function Stats() {
 
   const queueOrder = ['Ranked Solo', 'Ranked Flex']
 
-  console.log(matchList)
   return (
     <div className="stats-container">
       <div className="stats-navbar">
