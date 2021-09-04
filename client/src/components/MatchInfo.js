@@ -32,18 +32,18 @@ export default function MatchInfo({ match }) {
   // TODO: clean up this function logic
   function getTimeElapsed(delta) {
     if (delta < 60) {
-      return `${delta} ${delta != 1 ? 'seconds': 'second'} ago`
+      return `${delta} ${delta !== 1 ? 'seconds': 'second'} ago`
     }
     if (delta < 60 * 60) {
       const mins = Math.floor(delta / 60)
-      return `${mins} ${mins != 1 ? 'mins': 'min'} ago`
+      return `${mins} ${mins !== 1 ? 'mins': 'min'} ago`
     }
     if (delta < 60 * 60 * 24) {
       const hours = Math.floor(delta / (60 * 24))
-      return `${hours} ${hours != 1 ? 'hours': 'hour'} ago`
+      return `${hours} ${hours !== 1 ? 'hours': 'hour'} ago`
     } 
     const days = Math.floor(delta / (60 * 60 * 24))
-    return `${days} ${days != 1 ? 'days': 'day'} ago`
+    return `${days} ${days !== 1 ? 'days': 'day'} ago`
   }
 
   const gameTimestamp = matchData?.info?.gameCreation;            // in ms
@@ -181,8 +181,8 @@ export default function MatchInfo({ match }) {
         <div className='match-info-items-set'>
           { 
             itemIds.map((itemId, idx) => {
-              const itemSrc = `http://ddragon.leagueoflegends.com/cdn/11.13.1/img/item/${itemId}.png`
-              return <img src={itemSrc} alt={`item-${idx}`} />
+              const itemSrc = itemId != undefined ? `http://ddragon.leagueoflegends.com/cdn/11.13.1/img/item/${itemId}.png`: ""
+              return <img src={itemSrc} alt={`item-${idx}`} key={`item-${idx}`}/>
             })
           }
         </div>

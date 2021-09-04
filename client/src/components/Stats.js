@@ -26,14 +26,21 @@ export default function Stats() {
       setRankedData(res.data)     
     }
 
-    // TODO: fix hardcoded data once api v5 migrated
     async function getMatchList() {
-      //const puuid = profileData.puuid
-      const accountId = profileData.accountId;
-      //const res = await axios.get(`/api/match-list/${puuid}`)
-      const res = await axios.get(`/api/match/${accountId}`)
-      setMatchList(res)
-     
+      const puuid = profileData.puuid
+      const res = await axios.get(`/api/match-ids/${puuid}`)
+      const matchIds = res.data
+      console.log("matchIds", matchIds)
+      let matchList = []
+      for (let i = 0; i < matchIds.length; i++) {
+        const matchId = matchIds[i]
+        const match = await axios.get(`/api/match/${matchId}`)
+        matchList.push(match.data)
+      }
+
+      console.log("match v5", matchList)
+
+      setMatchList(matchList)     
     }
 
     getProfileData();
